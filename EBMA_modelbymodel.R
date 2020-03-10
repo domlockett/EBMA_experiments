@@ -49,6 +49,7 @@ if(is.null(X)==T){
 
 ## the first methods are based on cv.glmnet
 # varying alpha to observe lasso (a=1), elastic net (a=.5), and ridge (alpha =0) 
+# May need to vary alpha to find best value for elastic net
 fit1<- cv.glmnet(y =Y, x= Xfull, alpha=1, family='multinomial', typ='mse')
 fit2<- cv.glmnet(y = Y, x= Xfull, alpha=0.5, family='multinomial', type='mse')
 fit3<- cv.glmnet(y = Y, x= Xfull, alpha=0, family='multinomial', type='mse')
